@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { useState, createContext, Provider } from 'react'
+import BooksScreen from './Components/pages/Books-screen/Books-screen';
+import BooksCards from './Components/pages/Books-Cards/Books-Cards';
+const booksContext = createContext()
 function App() {
+  const [books, setBooks] = useState("[booksContext]")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <booksContext.Provider>
+        <BooksScreen />
+        <BooksCards />
+      </booksContext.Provider>
     </div>
   );
 }
