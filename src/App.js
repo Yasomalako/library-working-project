@@ -1,17 +1,21 @@
 import './App.css';
-import { useState, createContext, Provider } from 'react'
-import BooksScreen from './Components/pages/Books-screen/Books-screen';
-import BooksCards from './Components/pages/Books-Cards/Books-Cards';
-const booksContext = createContext()
+import BooksProvider from '../src/Context/BooksContext/Books-context';
+import {BrowserRouter } from "react-router-dom";
+import Router from './Router';
+import Header from './Components/Features/Header/Header';
+
+
 function App() {
-  const [books, setBooks] = useState("[booksContext]")
+
   return (
-    <div className="App">
-      <booksContext.Provider>
-        <BooksScreen />
-        <BooksCards />
-      </booksContext.Provider>
-    </div>
+    <>
+    <BrowserRouter>
+      <BooksProvider>
+        <Header/>
+        <Router/>
+      </BooksProvider>
+      </BrowserRouter>
+    </>
   );
 }
 

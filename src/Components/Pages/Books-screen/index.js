@@ -1,2 +1,2 @@
-import Books-screen from "./Books-screen";
-export default Books-screen;
+import BooksScreen from "./Books-screen";
+export default BooksScreen;
